@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coming Soon</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        /* Loader styles */
+        .loader {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Animations */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media(max-width: 600px){
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+            .loader {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="messageBox">
+    <h1>We're Working on Our Project</h1>
+    <p>We'll be back soon. Stay tuned!</p>
+    <div class="loader"></div>
+</div>
+
+<script>
+    // Optional: Add a countdown or redirect after some time
+    // For example, redirect after 10 seconds
+    setTimeout(() => {
+        // Redirect to homepage or another URL
+        // window.location.href = "https://yourwebsite.com";
+        // Or replace message with a thank you note
+        document.getElementById('messageBox').innerHTML = `
+            <h1>Thank You for Visiting!</h1>
+            <p>We'll be back with updates soon.</p>
+        `;
+    }, 10000); // 10 seconds
+</script>
+
+</body>
+</html>
