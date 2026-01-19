@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OUR CHAT</title>
+<!-- Google Fonts for a beautiful, feminine vibe -->
+<link href="https://fonts.googleapis.com/css2?family=Rasa&family=Pacifico&display=swap" rel="stylesheet" />
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+    /* Removed overflow: hidden to allow scrolling if needed */
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(135deg, #ffe4e1, #f0c0d0);
+    color: #6a1b9a;
+  }
+  /* Container to hold the chat iframe */
+  #chatWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    width: 100vw;
+  }
+  /* Make the embed fill the container */
+  #minnitEmbed {
+    flex: 1; /* Grow to fill remaining space */
+    display: flex;
+    width: 100%;
+  }
+  /* Style the iframe directly for better control */
+  #minnitEmbed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+</head>
+<body>
+<div id="chatWrapper">
+  <!-- Embed container for Minnit Chat -->
+  <script src="https://minnit.chat/js/embed.js?c=1758971289" defer></script>
+  <span 
+    id="minnitEmbed"
+    class="minnit-chat-sembed"
+    data-chatname="Main"
+    data-style="width:100%; height:100%;"
+    data-version="1.55">
+    Chat
+  </span>
+</div>
+<script>
+  window.addEventListener('load', () => {
+    function resizeChat() {
+      const embedSpan = document.querySelector('.minnit-chat-sembed');
+      if (embedSpan && embedSpan.children.length > 0) {
+        const iframe = embedSpan.children[0];
+        if (iframe && iframe.tagName === 'IFRAME') {
+          iframe.style.height = `${window.innerHeight}px`;
+        }
+      }
+    }
+    resizeChat();
+    window.addEventListener('resize', resizeChat);
+  });
+</script>
+</body>
+</html>
