@@ -3,36 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fully Responsive Chat</title>
+<title>Fullscreen Chat</title>
 <style>
-  body {
+  html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* full viewport height */
   }
 
-  /* Container for the chat, fills most of the page */
+  /* Container for the chat that occupies entire viewport */
   .chat-wrapper {
-    flex: 1; /* take up remaining space */
+    flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: stretch; /* stretch to fill height */
-    width: 100%;
-  }
-
-  /* Style for the chat embed span to fill container */
-  .minnit-chat-sembed {
-    width: 100%;
+    margin: 0;
+    padding: 0;
     height: 100%;
-    display: block;
+    width: 100%;
   }
 
-  /* Optional: style for the footer link */
-  .powered-by-minnit {
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
+  /* Force the chat span to fill the container */
+  .minnit-chat-sembed {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
   }
 </style>
 </head>
@@ -48,7 +50,6 @@
     >
       Chat
     </span>
-  </div>
   </div>
 </body>
 </html>
