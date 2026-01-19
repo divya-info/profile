@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Responsive Chat Widget</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  #chat-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* Optional: hide overflow if needed */
+  #chat-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="chat-container"></div>
+
+<!-- Load Chatwee script -->
+<script src="https://chatwee-api.com/v2/script/696a58c6ab3efb463330a852.js"></script>
+
+<!-- Initialize the chat widget if needed -->
+<script>
+  // Depending on their documentation, you might need to initialize the widget:
+  // For example:
+  // Chatwee.init({ container: '#chat-container' });
+  // But if their script auto-initializes, this may not be necessary.
+</script>
+
+</body>
+</html>
